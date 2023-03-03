@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import WeatherForecast from './api/WeatherForecast';
+import DailyForecast from './api/DailyForecast';
+import Paper from '@mui/material/Paper';
+import Image from './assets/2850815.jpg';
+import WeatherCard from './components/WeatherCard'
+import { Container } from '@mui/material';
+import TitleSearchBar from './components/TitleSearchBar';
+import BigLabel from './components/BigLabel';
+import CurrentDetails from './components/CurrentDetails'
+
+
+const styles = {
+  paperContainer: {
+    backgroundImage: `url(${Image})`
+  }
+};
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Paper style={styles.paperContainer}>
+        <Container>
+          <TitleSearchBar />
+          <BigLabel/>
+          <CurrentDetails />
+          <WeatherForecast />
+        </Container>
+      </Paper>
+    </React.Fragment>
   );
 }
 
