@@ -1,32 +1,37 @@
 import React from 'react';
 import './App.css';
-import WeatherForecast from './api/WeatherForecast';
-import DailyForecast from './api/DailyForecast';
 import Paper from '@mui/material/Paper';
-import Image from './assets/2850815.jpg';
-import WeatherCard from './components/WeatherCard'
+import Image from './assets/sunset.jpg';
 import { Container } from '@mui/material';
 import TitleSearchBar from './components/TitleSearchBar';
 import BigLabel from './components/BigLabel';
-import CurrentDetails from './components/CurrentDetails'
-
+import CurrentDetails from './components/CurrentDetails';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import CardPopulate from './components/CardPopulate';
 
 const styles = {
   paperContainer: {
+    minHeight: '100vh',
     backgroundImage: `url(${Image})`
   }
 };
 
 
 function App() {
+  const data = useSelector((state: RootState) => (state.dailyForecast.data));
   return (
     <React.Fragment>
       <Paper style={styles.paperContainer}>
-        <Container>
+        <Container 
+        // sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+        >
           <TitleSearchBar />
+          {data && (<>
           <BigLabel/>
           <CurrentDetails />
-          <WeatherForecast />
+          <CardPopulate />
+          </>)}
         </Container>
       </Paper>
     </React.Fragment>
