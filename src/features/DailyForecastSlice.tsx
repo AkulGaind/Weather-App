@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchDailyForecast = createAsyncThunk('dailyForecast/fetchDailyForecast', async (city: string,) => {
-	const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=917a0b1965e1ef446c00cb8a657e5c40&units=metric`);
+	const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=99c40d8e4a87e76053e06e11bfc84dad&units=metric`);
 	return response.data;
 });
 
@@ -20,7 +20,7 @@ const initialState: WeatherForecastState = {
 };
 
 export const fetchWeatherForecast = createAsyncThunk('weatherForecast/fetchWeatherForecast', async (city: string) => {
-	const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=917a0b1965e1ef446c00cb8a657e5c40&units=metric`);
+	const response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=99c40d8e4a87e76053e06e11bfc84dad&units=metric`);
 	return response.data;
 });
 

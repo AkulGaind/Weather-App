@@ -11,6 +11,7 @@ const BigLabel: React.FC = () => {
     return(
         <React.Fragment>
             <Typography
+            sx={{mt: 3}}
             variant="h5" 
             color="white">
                 {data.name}, {data.sys.country}

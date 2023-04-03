@@ -1,8 +1,10 @@
 import React from 'react'
 import WeatherCard from './WeatherCard';
-import { Grid } from '@mui/material';
+import { Grid, Box} from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 
 const CardPopulate: React.FC = () => {
     const data = useSelector((state: RootState) => (state.weatherForecast.data));
@@ -11,9 +13,23 @@ const CardPopulate: React.FC = () => {
     console.log(date)
     const time = Number(new Date().toLocaleString('en-GB').slice(12).slice(0, 2));
 
+    const MyComponent = styled('div')({
+  color: 'white',
+  textAlign: 'center',
+//   backgroundColor: 'aliceblue',
+  padding: 8,
+  borderRadius: 4,
+});
+
     return (
         <React.Fragment>
-            {loading ? <div>Loading...</div> : <Grid container wrap='nowrap' overflow={'scroll'} spacing={1}>
+            <Typography
+            sx={{mb: 2}}
+            variant="h5"
+            color="#fff">
+                Forecast
+            </Typography>
+            {loading ? <MyComponent>Loading.....</MyComponent> : <Grid container wrap='nowrap' overflow={'scroll'} spacing={1}>
                 {
                     // data.list.map((item: any, index: number) => {
                     //     return(

@@ -16,7 +16,7 @@ const WeatherCard: React.FC<props> = ({ day }) => {
     else d=day.dt_txt.slice(5,10).slice(3,5) + " " + month[Number(day.dt_txt.slice(5,10).slice(0,2)) - 1];
     return (
         <Card
-            sx={{minWidth:120, maxHeight: 200}}>
+            sx={{minWidth:120, maxHeight: 200, backgroundColor: 'transparent', background: '#ffffff20', boxShadow: 0, color: 'white'}}>
 
             <Stack
                 justifyContent="center"
@@ -28,7 +28,8 @@ const WeatherCard: React.FC<props> = ({ day }) => {
                 <CardContent>
                     <Typography
                         variant="body1">
-                            <strong>{d}</strong>
+                            {d}
+                            {/* <strong>{d}</strong> */}
                         {/* {day.dt_txt.slice(5,10)}  {d} */}
                     </Typography>
                     <Typography

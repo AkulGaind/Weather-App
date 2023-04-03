@@ -11,7 +11,7 @@ const CurrentDetails: React.FC = () => {
         <React.Fragment>
             <Stack
             direction="row"
-            sx={{mb: 6, minHeight: 200}}>
+            sx={{mb: 6, minHeight: 200, mt: 6}}>
                 <CurrentTemp />
                 <Card sx={{width:'50%',backgroundColor: 'transparent', boxShadow: 0}}><CurrentStats /></Card>
             </Stack>
