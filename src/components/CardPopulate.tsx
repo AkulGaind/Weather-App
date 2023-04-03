@@ -29,7 +29,7 @@ const CardPopulate: React.FC = () => {
             color="#fff">
                 Forecast
             </Typography>
-            {loading ? <MyComponent>Loading.....</MyComponent> : <Grid container wrap='nowrap' overflow={'scroll'} spacing={1}>
+            {loading ? <MyComponent>Loading.....</MyComponent> : <Grid container wrap='nowrap' overflow={'scroll'} spacing={1} sx={{"&:-webkit-scrollbar":{width: 0}}}>
                 {
                     // data.list.map((item: any, index: number) => {
                     //     return(
