@@ -7,7 +7,8 @@ import { RootState } from '../store/store';
 const CurrentStats: React.FC = () => {
     const data = useSelector((state: RootState) => (state.dailyForecast.data));
     return (
-        <Grid container spacing={2}>
+        <Grid container spacing={2}
+        textAlign="center">
             <Grid item xs={3}><Typography
                 variant="h5"
                 color="#fff">
